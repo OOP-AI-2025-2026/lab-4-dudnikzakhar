@@ -45,7 +45,8 @@ public class DiscountBill2 {
     public double getDiscountPercent() {
         if (regularCustomer) {
             if (bill.getTotal() != 0) {
-                return (100 - ((this.getTotal() * 100) / bill.getTotal()));
+                double testTotal = (100 - ((this.getTotal() * 100) / bill.getTotal()));
+                return Math.round(testTotal * 10000000000000.0) / 10000000000000.0;
             }
         }
         return 0;
